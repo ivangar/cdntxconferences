@@ -1,0 +1,707 @@
+//Mixins//
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}//.box { @include border-radius(10px); }
+
+//Variables//
+$break-tablet: 600px;
+$break-desktop: 950px;
+$break-ldesktop: 1400px;
+
+$nav-height: 3em;
+$dark-grey: #919396;
+$fellows-orange: #e59025;
+$liver-purple: #85366d;
+$greyout:#AAAAAA;
+$kidney-teal: #1f90a0;
+$walbaum: "Walbaum";
+$helvetica: "Helvetica";
+
+/*----------------Common----------------*/
+.hide-text {
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
+}
+
+html, body {
+    		height: 100%;
+    		margin: 0;
+    		max-width: 100%;
+    	}
+
+b{
+	display: block;
+	margin-bottom: 1em;
+}
+
+a{display: inline-block;}
+h1{margin-top: 0;}
+
+/*----------------Phone----------------*/
+//.container, .header{border: 1px solid black;}
+
+.mconferance, .mnav{
+	display: block;
+}
+
+.dmenus, .banner, .navhover{
+	display: none;
+}
+/*Phone Header*/
+.header{
+	text-align: center;
+	margin: 0 auto;
+}
+.header p, .header b{
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-family: $helvetica;
+}
+.header h1{
+	width: 97%;
+	font-family: $walbaum, Serif;
+	font-size: 1.3em;
+	color: $dark-grey;
+	margin: 0 auto;
+}
+.header h2{
+	width: 90%;
+	font-weight: 300;
+	font-family: $helvetica;
+	font-size: 1.4em;
+	margin: 0 auto;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+.mbanner{
+	background: $dark-grey;
+}
+.mbanner div{
+	margin: 0 auto;
+	width: 100%;
+}
+.mbanner div figure{
+	max-width: 100%;
+	margin:0;
+	padding:0;
+}
+.mbanner div figure img{
+	height: 5em;
+	margin: 0 auto;
+}
+.mbanner div.bannermenu figure{
+	text-align: center;
+}
+p{
+	margin:0;
+}
+.login{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.login h4{
+  margin: 2em auto auto auto;
+}
+.login form input{
+	width: 90%;
+
+}
+.login form input[type="checkbox"], .login form input[type="submit"]{
+	width: auto;
+	margin-bottom: 1em;
+}
+
+.footer{
+	width: 100%;
+	text-align: center;
+	margin-top: 3em;
+}
+.footer p{
+font-size: 1em;
+color: grey;
+}
+.footer p span a{
+	font-weight: bold;
+	color: grey;
+	text-decoration:none;
+}
+.footer div{
+	width: 100%;
+	margin-top: 3em;
+	text-align: center;
+}
+.footer div p.little{
+	font-size: 0.7em;
+}
+.footer div img{
+	max-width: 100%;
+}
+
+
+/*mnav*/
+.mnav{
+	background: #DEDFE0;
+	width: 100%;
+	text-align: center;
+}
+.mnav p{
+	margin-bottom: 0;
+	color: #A0A4AF;
+	line-height: 1.5em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.mnav ul {
+	padding-left: 0;
+	margin: 0;
+}
+.mnav li{
+	 list-style-type: none;
+	 width: 100%;
+	 text-align: center;
+	 border-bottom: 1px solid white;
+	 background: $dark-grey;
+	 display: block;
+	 height: 3em;
+	 position: relative;
+  	z-index: 2;
+}
+.mnav li a{
+	text-decoration: none;
+	color: white;
+	line-height: 3em;
+	display:block;
+}
+
+/*Menu*/
+
+.menuhover{
+	background: #DEDFE0;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 1.5em;
+}
+
+#orange{
+	background: $fellows-orange;
+}
+#purple{
+	background: $liver-purple;
+}
+#teal{
+	background: $kidney-teal;
+}
+
+.orange{
+	background: $fellows-orange;
+}
+.purple{
+	background: $liver-purple;
+}
+.teal{
+	background: $kidney-teal;
+}
+
+
+.menuhover p{
+	margin-bottom: 0;
+	color: #FFFFFF;
+	line-height: 3em;
+}
+.menuhover ul {
+	padding-left: 0;
+	margin: 0;
+}
+.menuhover li{
+	 list-style-type: none;
+	 width: 100%;
+	 text-align: center;
+	 border-bottom: 1px solid white;
+	 background: #DEDFE0;
+	 display: block;
+	 height: 3em;
+	 position: relative;
+  	 z-index: 2;
+  	 
+}
+.menuhover li a{
+	text-decoration: none;
+	line-height: 3em;
+	display:block;
+}
+#orange li a{
+	color: $fellows-orange;
+}
+#purple li a{
+	color: $liver-purple;
+}
+#teal li a{
+	color: $kidney-teal;
+}
+
+#orange li a[href="#"], #purple li a[href="#"], #teal li a[href="#"]{
+	text-decoration: none;
+	color: $greyout;
+	line-height: 3em;
+	display:block;
+}
+
+/*Template Default*/
+.headbanner{
+  width: 100%;
+  background: $dark-grey;
+  height: 5em;
+}
+.headcontent{
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+}
+.headcontent img{
+	float: left;
+	max-height: 100%;
+}
+.headcontent ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+	padding-left: 1em;
+	clear: both;
+	width: 100%;
+}
+.headcontent ul li{
+	list-style-image: url('../images/circle.png');
+	float: left;
+
+	//clear: both;
+	line-height: 2em;
+}
+.headcontent a{
+	float: right;
+	text-decoration: none;
+	line-height: 2em; 
+	color: $dark-grey;
+	font-family: $walbaum;
+	display: block;
+	
+}
+
+.imgcontent{
+	width: 100%;
+	border-left: 1px solid $dark-grey;
+	border-right: 1px solid $dark-grey;
+	border-bottom: 1px solid $dark-grey;
+	//height: 25em;
+	margin: 0 auto;
+}
+
+/*Template*/
+.headcontent{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.imgcontent{
+	width: 100%;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 0px;
+	//height: 25em;
+	margin: 0 auto;
+}
+.imgcontent footer p{
+	text-align: left;
+	margin: 0;
+	font-size: 0.8em;
+}
+
+.imgcontent .footer{
+	width: auto;
+	text-align: left;
+	margin-top: 3em;
+	padding-left: 1rem;
+	font-size: 0.8em;
+}
+.imgcontent .footer p{
+	padding-left: 0;
+	font-style: normal;
+	color: $dark-grey;
+	font-family:$helvetica;
+}
+
+.imgcontent .footer div{
+	width: 100%;
+	margin-top: 3em;
+	text-align: left;
+}
+
+.imgcontent h1{
+ padding-left: 1rem;
+ padding-bottom: 0;
+ padding-top: 1em;
+ margin-bottom: 0;
+}
+
+.imgcontent a.pdf{
+	padding-left: 1em;
+	font-family: $helvetica;
+}
+.fellows .imgcontent h1, .fellows .imgcontent a.pdf{
+	color: #e59025;
+}
+.kidney .imgcontent h1, .kidney .imgcontent a.pdf{
+	 color: #548E9C;
+}
+.liver .imgcontent h1, .liver .imgcontent a.pdf{
+	color: #85366d;
+}
+
+
+.imgcontent p{
+	padding-left: 1em;
+	font-style: italic;
+	color: $dark-grey;
+	font-family:$helvetica;
+}
+
+.imgcontent img{
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+@media only screen and (max-width: 336px ) {
+.mbanner div figure img {height: auto; max-width: 100%;}
+.footer a{word-wrap: break-word;
+display: inline;
+}
+}
+
+
+/*----------------Tablet----------------*/
+@media only screen and (min-width: $break-tablet) {
+
+.header{
+	text-align: center;
+}
+.header p{
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-family: $helvetica;
+}
+.header h1{
+	font-family: $walbaum, Serif;
+	font-size: 2.5em;
+	color: $dark-grey;
+	margin: 0 auto;
+}
+.header h2{
+	font-weight: 300;
+	font-family: $helvetica;
+	font-size: 2em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+.banner{
+	width: 100%;
+	background: $dark-grey;
+	overflow: hidden;
+}
+.column{
+	width: 33%;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+}
+.column img{
+	height: 3.5em;
+	max-width: 100%; 
+	//width: auto;
+	//height: 4em;
+	//float: left;
+	//padding: 1em;
+
+}
+.column div{
+	margin: 0 auto;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	text-align:left;
+}
+.column h3{
+	float: left;
+	line-height: 1.6em;
+	font-family: $walbaum, Serif;
+	color: white;
+}
+
+.login{
+	width: 20em;
+	margin: 0 auto;
+	text-align: center;
+}
+.login h4{
+  margin: 2em auto auto auto;
+}
+.login form input{
+	width: 100%;
+}
+.login form input[type="checkbox"], .login form input[type="submit"]{
+	width: auto;
+}
+.navhover{
+	background: #DEDFE0;
+	width: 100%;
+	height: $nav-height;
+}
+.navhover p{
+	margin-bottom: 0;
+	color: #A0A4AF;
+	line-height: $nav-height/2;
+}
+.navhover ul {
+	padding-left: 0;
+	margin: 0;
+}
+.navhover li{
+	 list-style-type: none;
+	 width: 100%;
+	 text-align: center;
+	 border-bottom: 1px solid white;
+	 background: $dark-grey;
+	 display: block;
+	 height: 1.5em;
+	 position: relative;
+  	z-index: 2;
+}
+.navhover li a{
+	text-decoration: none;
+	color: white;
+	line-height: 1.5em;
+	display:block;
+}
+
+
+.footer{
+	width: 100%;
+	text-align: center;
+	margin-top: 7em;
+}
+
+.footer p{
+font-size: 1em;
+color: grey;
+}
+.footer p span a{
+	font-weight: bold;
+	color: grey;
+	text-decoration:none;
+}
+.footer div{
+	width: 100%;
+	margin-top: 3em;
+	text-align: center;
+}
+.footer div p.little{
+	font-size: 0.7em;
+}
+.footer div img{
+	max-width: 100%;
+}
+
+/*Menu*/
+.menucolumn{
+	width: 33.33%;
+	float: left;
+	margin-bottom: 15em;
+}
+.menuhover{
+	background: #DEDFE0;
+	width: 100%;
+	text-align: center;
+	height: 2em;
+	margin: 0 auto;
+	margin-top: 1.5em;
+}
+
+#orange{
+	background: $fellows-orange;
+}
+#purple{
+	background: $liver-purple;
+}
+#teal{
+	background: $kidney-teal;
+}
+.orange{
+	background: $fellows-orange;
+}
+.purple{
+	background: $liver-purple;
+}
+.teal{
+	background: $kidney-teal;
+}
+
+.menuhover p{
+	margin-bottom: 0;
+	color: #FFFFFF;
+	line-height: 2em;
+}
+.menuhover ul {
+	padding-left: 0;
+	margin: 0;
+}
+.menuhover li{
+	 list-style-type: none;
+	 width: 100%;
+	 text-align: center;
+	 border-bottom: 1px solid white;
+	 background: #DEDFE0;
+	 display: block;
+	 height: 1.5em;
+	 position: relative;
+  	 z-index: 2;
+  	 
+}
+.menuhover li a{
+	text-decoration: none;
+	line-height: 1.5em;
+	display:block;
+}
+#orange li a{
+	color: $fellows-orange;
+}
+#purple li a{
+	color: $liver-purple;
+}
+#teal li a{
+	color: $kidney-teal;
+}
+
+#orange li a[href="#"], #purple li a[href="#"], #teal li a[href="#"]{
+	text-decoration: none;
+	color: $greyout;
+	line-height: 1.5em;
+	display:block;
+}
+
+.mconferance, .mnav{
+	display: none;
+}
+
+.dmenus, .banner, .navhover{
+	display: block;
+}
+
+/*Template Default*/
+.headbanner{
+  width: 100%;
+  background: $dark-grey;
+  height: 5em;
+}
+.headcontent{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+.headcontent img{
+	float: left;
+	max-height: 100%;
+}
+.headcontent ul{
+	margin: 0;
+	padding: 0;
+	float: right;
+	clear: none;
+	width: auto;
+}
+.headcontent ul li{
+	list-style-image: url("../images/circle.png");
+	float: right;
+	line-height: 5em;
+}
+.headcontent a{
+	float: right;
+	text-decoration: none;
+	line-height: 5em; 
+	color: #ffffff;
+	font-family: $walbaum;
+}
+
+.imgcontent{
+	width: 90%;
+	border-left: 1px solid $dark-grey;
+	border-right: 1px solid $dark-grey;
+	border-bottom: 1px solid $dark-grey;
+	//height: 25em;
+	margin: 0 auto;
+}
+
+.home .footer{
+	margin-top: 6em;
+}
+
+}
+
+/*----------------Desktop----------------*/
+@media only screen and (min-width: $break-desktop) {
+
+	.column img{
+	height: 5em; 
+	width: auto;
+	//height: 4em;
+	//float: left;
+	//padding: 1em;
+}
+.menuhover{
+	background: #DEDFE0;
+	width: 70%;
+	text-align: center;
+	height: 2em;
+	margin: 0 auto;
+	margin-top: 1.5em;
+}
+
+.imgcontent{
+	width: 80%;
+}
+.headcontent{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+}
+
+
+
+/*----------------Large Desktop----------------*/
+@media only screen and (min-width: $break-ldesktop) {
+.imgcontent{
+	width: 60%;
+}
+.headcontent{
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+}
+.header p{
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-family: $helvetica;
+}
+}
+
+
